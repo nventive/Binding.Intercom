@@ -5,7 +5,7 @@
 	<Target Name="Build">
 		<MSBuild Properties="ServerAddress=$(MacServerAddress);ServerUser=admin;PackageOutputPath=$(build_artifactstagingdirectory);PackageVersion=$(GitVersion_SemVer);InformationalVersion=$(GitVersion_InformationalVersion)"
 						 Targets="Build"
-						 Projects="../Binding.Intercom/Binding.Intercom.sln"
+						 Projects="../Binding.Intercom.sln"
 						 RebaseOutputs="false" />
 	</Target>
 

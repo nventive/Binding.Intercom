@@ -21,7 +21,7 @@ phases:
 
   - task: NuGetCommand@2
     inputs:
-      solution: "Binding.Intercom/Binding.Intercom.sln"
+      solution: "Binding.Intercom.sln"
       feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
 
   - task: MSBuild@1
