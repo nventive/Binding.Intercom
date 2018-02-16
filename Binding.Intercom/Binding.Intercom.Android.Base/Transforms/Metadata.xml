@@ -1,0 +1,123 @@
+﻿<metadata>
+
+	<!-- REMOVE CLASSES -->
+	<remove-node path="
+							 /api/package[@name='io.intercom.android.sdk']
+							 /class[
+									not(starts-with(@name,'Intercom')) and 
+									not(starts-with(@name,'Company')) and 
+									not(starts-with(@name,'UserAttributes'))
+							 ]" />
+	<remove-node path="
+							 /api/package[@name='io.intercom.android.sdk.identity']
+							 /class[
+									not(starts-with(@name,'Registration')) and 
+									not(starts-with(@name,'UserIdentity'))
+							 ]" />
+	<remove-node path="
+							 /api/package[starts-with(@name,'io.intercom.android.sdk.models')]
+							 /class[
+									@name!='User' and
+									@name!='User.Builder' and
+									not(starts-with(@name,'Avatar'))
+							 ]" />
+	<remove-node path="
+							 /api/package[starts-with(@name,'io.intercom.android.sdk.push')]
+							 /class[
+									@name!='IntercomPushClient'
+							 ]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.actions')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.activities')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.annotations')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.api')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.blocks')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.common')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.conversation')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.errorreporting')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.exceptions')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.experimental')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.helpcenter')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.imageloader')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.inbox')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.lightbox')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.logger')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.metrics')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.middleware')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.nexus')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.operator')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.overlay')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.persistence')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.profile')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.spans')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.state')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.store')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.transforms')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.twig')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.user')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.utilities')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.views')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.com')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.okhttp3')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.okio')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.retrofit2')]" />
+
+	<!-- RENAME NAMESPACES -->
+	<attr path="/api/package[@name='io.intercom.android.sdk']"
+				name="managedName">Binding.Intercom.Android</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']"
+				name="managedName">Binding.Intercom.Android.Push</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.identity']"
+				name="managedName">Binding.Intercom.Android.Identity</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.models']"
+				name="managedName">Binding.Intercom.Android.Models</attr>
+
+	<!-- RENAME PARAMETERS -->
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='initialize' and count(parameter)=3 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[@name='p0']"
+				name="name">application</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='initialize' and count(parameter)=3 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[@name='p1']"
+				name="name">apiKey</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='initialize' and count(parameter)=3 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String'] and parameter[3][@type='java.lang.String']]/parameter[@name='p2']"
+				name="name">appId</attr>
+
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='addUnreadConversationCountListener' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.UnreadConversationCountListener']]/parameter[@name='p0']"
+				name="name">listener</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='removeUnreadConversationCountListener' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.UnreadConversationCountListener']]/parameter[@name='p0']"
+				name="name">listener</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='registerIdentifiedUser' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.identity.Registration']]/parameter[@name='p0']"
+				name="name">registration</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='setBottomPadding' and count(parameter)=1 and parameter[1][@type='int']]/parameter[@name='p0']"
+				name="name">padding</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='setInAppMessageVisibility' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.Intercom.Visibility']]/parameter[@name='p0']"
+				name="name">visibility</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='setLauncherVisibility' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.Intercom.Visibility']]/parameter[@name='p0']"
+				name="name">visibility</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='updateUser' and count(parameter)=1 and parameter[1][@type='io.intercom.android.sdk.UserAttributes']]/parameter[@name='p0']"
+				name="name">userAttributes</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='handlePushMessage' and count(parameter)=1 and parameter[1][@type='android.app.TaskStackBuilder']]/parameter[@name='p0']"
+				name="name">stackBuilder</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='logEvent' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[@name='p0']"
+				name="name">eventName</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='logEvent' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.Map&lt;java.lang.String, ?&gt;']]/parameter[@name='p0']"
+				name="name">eventName</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='logEvent' and count(parameter)=2 and parameter[1][@type='java.lang.String'] and parameter[2][@type='java.util.Map&lt;java.lang.String, ?&gt;']]/parameter[@name='p1']"
+				name="name">metadata</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk']/class[@name='Intercom']/method[@name='setUserHash' and count(parameter)=1 and parameter[1][@type='java.lang.String']]/parameter[@name='p0']"
+				name="name">hash</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='handlePush' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='android.os.Bundle']]/parameter[@name='p0']"
+				name="name">application</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='handlePush' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='android.os.Bundle']]/parameter[@name='p1']"
+				name="name">message</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='handlePush' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;']]/parameter[@name='p0']"
+				name="name">application</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='handlePush' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;']]/parameter[@name='p1']"
+				name="name">message</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='isIntercomPush' and count(parameter)=1 and parameter[1][@type='android.os.Bundle']]/parameter[@name='p0']"
+				name="name">message</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='isIntercomPush' and count(parameter)=1 and parameter[1][@type='java.util.Map&lt;java.lang.String, java.lang.String&gt;']]/parameter[@name='p0']"
+				name="name">message</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='sendTokenToIntercom' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String']]/parameter[@name='p0']"
+				name="name">application</attr>
+	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='sendTokenToIntercom' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String']]/parameter[@name='p1']"
+				name="name">token</attr>
+
+</metadata>

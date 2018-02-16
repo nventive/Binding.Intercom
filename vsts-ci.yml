@@ -1,0 +1,44 @@
+resources:
+- repo: self
+  clean: true
+  lfs: true
+
+phases:
+- phase: VS_Latest
+  variables:
+    Configuration: Release
+    Platform: Any CPU
+
+  queue:
+    name: Default
+    demands:
+    - Xamarin -equals 4.5.0.486
+
+  steps:
+  - task: gittools.gitversion.gitversion-task.GitVersion@3
+
+  - task: NuGetToolInstaller@0
+
+  - task: NuGetCommand@2
+    inputs:
+      solution: "Binding.Intercom/Binding.Intercom.sln"
+      feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
+
+  - task: MSBuild@1
+    inputs:
+      solution: Build\Build.proj
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildargs: ""
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: $(build.artifactstagingdirectory)
+      ArtifactName: "Packages"
+      ArtifactType: "Container"

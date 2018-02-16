@@ -1,0 +1,389 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+	<PropertyGroup>
+		<TargetFramework>Xamarin.iOS10</TargetFramework>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>nventive</Authors>
+		<Description>An iOS binding over Intercom SDK 4.1.9</Description>
+		<PackageId>Uno.Binding.Intercom.iOS</PackageId>
+		<PackageOutputPath>..\packages</PackageOutputPath>
+		<PackageVersion>4.1.9</PackageVersion>
+		<TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+		<TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+		<NuGetTargetMoniker>Xamarin.iOS,Version=v1.0</NuGetTargetMoniker>
+		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+		<DefineConstants>$(DefineConstants);IOS1_0;XAMARIN;XAMARIN_IOS;XAMARIN_IOS_UNIFIED</DefineConstants>
+		<LanguageTargets>$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets</LanguageTargets>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+		<Compile Remove="ApiDefinition.cs" />
+		<Compile Remove="Structs.cs" />
+		<None Include="ApiDefinition.cs" />
+		<None Include="Structs.cs" />
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\certs\intercom.icmcer" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\back%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\back%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\chat_bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\chat_bubble%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\chat_bubble%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_annotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_annotation%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_annotation%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_intercom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_intercom%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_intercom%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_note%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_note%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_post%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\close_post%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\footer_link_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\footer_link_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\footer_link_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\intercom_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\intercom_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\intercom_logo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\launcher%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\launcher%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\linkedin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\linkedin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\message_failed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\message_failed%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\message_failed%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\open_post_from_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\open_post_from_card%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\open_post_from_card%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\send_annotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\send_annotation%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\send_annotation%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\snooze_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\snooze_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\snooze_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\spinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\spinner%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\spinner%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\twitter%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\twitter%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\undo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\undo%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\upload_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\upload_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\upload_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\user_participated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\user_participated%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\user_participated%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\GIF\icon_GIF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\GIF\icon_GIF%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\GIF\icon_GIF%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_expand_photos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_expand_photos%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_expand_photos%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_photo_input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_photo_input%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Photo\icon_photo_input%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Text\icon_text_input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Text\icon_text_input%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\images\Inputs\Text\icon_text_input%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\sound\admin_reply_delivered.caf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\sound\message_delivered.caf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\sound\message_failed.caf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Intercom.bundle\sound\message_sending.caf" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ar.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\bg.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\bs.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ca.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\cs.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\da.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\de-form.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\de.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\el.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\en.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\es.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\et.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\fi.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\fr.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\he.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\hr.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\hu.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\id.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\it.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ja.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ko.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\lt.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\lv.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\mn.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\nb.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\nl.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\pl.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\pt-br.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\pt-pt.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ro.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\ru.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\sl.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\sr.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\sv.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\tr.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\vi.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\zh-hans.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IntercomTranslations.bundle\zh-hant.strings" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Intercom.framework">
+      <Kind>Framework</Kind>
+      <Frameworks>Foundation</Frameworks>
+      <ForceLoad>True</ForceLoad> 
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+</Project>
