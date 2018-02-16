@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid70;MonoAndroid71</TargetFrameworks>
+		<Configurations>Debug;Release;Release_Android</Configurations>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
