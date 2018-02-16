@@ -6,6 +6,8 @@ resources:
 phases:
 - phase: VS_Latest
   variables:
+    NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
+    NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache    
     Configuration: Release
     Platform: Any CPU
 
