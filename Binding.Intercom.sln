@@ -1,21 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Base", "Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj", "{BD7A2A0C-4FEF-428F-A214-99726D2B51D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Android.Base", "Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj", "{BD7A2A0C-4FEF-428F-A214-99726D2B51D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Fcm", "Binding.Intercom.Android.Fcm\Binding.Intercom.Android.Fcm.csproj", "{5E0AE5EA-832C-4C84-A43C-8E95B9BAB856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Android.Fcm", "Binding.Intercom.Android.Fcm\Binding.Intercom.Android.Fcm.csproj", "{5E0AE5EA-832C-4C84-A43C-8E95B9BAB856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Composer", "Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj", "{1AF4BE91-5C58-4594-84F9-22E2EA1BA914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Android.Composer", "Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj", "{1AF4BE91-5C58-4594-84F9-22E2EA1BA914}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Composer.Gallery", "Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj", "{9643D466-CD94-4C0D-A054-01EF59BE949B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Android.Composer.Gallery", "Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj", "{9643D466-CD94-4C0D-A054-01EF59BE949B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.iOS", "Binding.Intercom.iOS\Binding.Intercom.iOS.csproj", "{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.iOS", "Binding.Intercom.iOS\Binding.Intercom.iOS.csproj", "{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{211CFEC6-5768-4F68-8794-7F9471A7C6E6}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{D9BCD5C3-F44C-42AE-A080-D0D2C6B3272E}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Build.proj = Build\Build.proj
 	EndProjectSection
 EndProject
 Global
