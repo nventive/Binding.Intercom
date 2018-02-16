@@ -1,6 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid71</TargetFrameworks>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>nventive</Authors>
+		<Description>An Android binding over Intercom SDK to support Firebase Notification 4.1.7</Description>
+		<PackageId>Uno.Binding.Intercom.Android.Fcm</PackageId>
+		<PackageOutputPath>..\packages</PackageOutputPath>
+		<PackageVersion>4.1.7</PackageVersion>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
