@@ -1,14 +1,17 @@
 assembly-versioning-scheme: MajorMinorPatch
-mode: ContinuousDeployment
-continuous-delivery-fallback-tag: ""
+mode: Mainline
 next-version: 4.1
 branches:
   master:
+    regex: master
     tag: dev
     increment: none
-  (stable):
+  stable:
+    regex: (stable)
     tag: 
-  dev/.*?/(.*?):
+    increment: none
+  dev:
+    regex: dev/.*?/(.*?)
     tag: dev.{BranchName}
 ignore:
   sha: []
