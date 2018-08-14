@@ -4,21 +4,8 @@ resources:
   lfs: true
 
 phases:
-- phase: VS_Latest
-  variables:
-    NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
-    NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache    
-    Configuration: Release
-    Platform: Any CPU
-
-  queue:
-    name: Default
-    demands:
-    - Xamarin -equals 4.5.0.486
-
+- phase: Main
   steps:
-  - task: gittools.gitversion.gitversion-task.GitVersion@3
-
   - task: NuGetToolInstaller@0
 
   - task: NuGetCommand@2
@@ -28,19 +15,21 @@ phases:
 
   - task: MSBuild@1
     inputs:
-      solution: Build\Build.proj
+      solution: Binding.Intercom.sln
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildargs: ""
+      msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory) /p:GeneratePackageOnBuild=true
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false
       logProjectEvents: false
       createLogFile: false
+      platform: 'Any CPU'
+      configuration: Release
 
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: $(build.artifactstagingdirectory)
-      ArtifactName: "Packages"
+      ArtifactName: $(build.definitionname)
       ArtifactType: "Container"
