@@ -1,10 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<TargetFramework>Xamarin.iOS10</TargetFramework>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Authors>nventive</Authors>
-		<Description>An iOS binding over Intercom SDK</Description>
-		<PackageId>Uno.Binding.Intercom.iOS</PackageId>
 		<TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
 		<TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
 		<NuGetTargetMoniker>Xamarin.iOS,Version=v1.0</NuGetTargetMoniker>
