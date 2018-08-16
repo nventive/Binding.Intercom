@@ -8,9 +8,13 @@
 
 	<PropertyGroup>
 		<PackageId>nventive.Binding.Intercom</PackageId>
+		<Title>Intercom SDK Binding</Title>
 		<Description>A Xamarin binding over the Intercom SDK</Description>
 		<Authors>nventive</Authors>
 		<Owners>nventive</Owners>
+		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
 	</PropertyGroup>
 	
 	<ItemGroup>

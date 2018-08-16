@@ -10,9 +10,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Authors>nventive</Authors>
-		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
 		<PackageId>nventive.Binding.Intercom.Android.Fcm</PackageId>
+		<Title>Intercom SDK Binding for Firebase</Title>
+		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
+		<Authors>nventive</Authors>
+		<Owners>nventive</Owners>
+		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
 	</PropertyGroup>
 
 	<PropertyGroup>
