@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
 		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
 		<AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
 		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -64,7 +66,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All"/>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -75,4 +77,10 @@
 	</ItemGroup>
 
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+		</ItemGroup>
+	</Target>
 </Project>
