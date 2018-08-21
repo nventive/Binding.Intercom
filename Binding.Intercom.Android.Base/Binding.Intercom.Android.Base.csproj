@@ -2,8 +2,8 @@
 	<PropertyGroup>
 		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
 		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<GeneratedOutputPath>obj\$(Configuration)\$(TargetFramework)\generated\</GeneratedOutputPath>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
@@ -33,7 +33,7 @@
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
 		<LibraryProjectZip Include="Jars\intercom-sdk-base-4.1.7.aar" />
 	</ItemGroup>
-	
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="26.1.0.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="26.1.0.1" />
@@ -48,18 +48,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Jars\AboutJars.txt" />
-		<None Include="Additions\AboutAdditions.txt" />
-	</ItemGroup>
-	
-	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
-	
+
 	<ItemGroup>
+		<Reference Include="Mono.Android" />
+		<None Include="Jars\AboutJars.txt" />
+		<None Include="Additions\AboutAdditions.txt" />
 		<TransformFile Include="Transforms\Metadata.xml" />
 		<TransformFile Include="Transforms\EnumFields.xml" />
 		<TransformFile Include="Transforms\EnumMethods.xml" />

@@ -2,9 +2,8 @@
 	<PropertyGroup>
 		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
 		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
-		<AppendTargetFrameworkToIntermediateOutputPath>false</AppendTargetFrameworkToIntermediateOutputPath>
+		<GeneratedOutputPath>obj\$(Configuration)\$(TargetFramework)\generated\</GeneratedOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
@@ -49,11 +48,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Jars\AboutJars.txt" />
-		<None Include="Additions\AboutAdditions.txt" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -61,6 +55,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="Mono.Android" />
+		<None Include="Jars\AboutJars.txt" />
+		<None Include="Additions\AboutAdditions.txt" />
 		<TransformFile Include="Transforms\Metadata.xml" />
 		<TransformFile Include="Transforms\EnumFields.xml" />
 		<TransformFile Include="Transforms\EnumMethods.xml" />
