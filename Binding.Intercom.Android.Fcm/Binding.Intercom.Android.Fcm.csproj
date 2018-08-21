@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
-		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
-		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
-		<AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<GeneratedOutputPath>obj\$(Configuration)\$(TargetFramework)\generated\</GeneratedOutputPath>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -22,27 +22,15 @@
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID7_1</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
 		<TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID8_0</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
 		<TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID8_1</DefineConstants>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Reference Include="Mono.Android" />
-		<None Include="Jars\AboutJars.txt" />
-		<None Include="Additions\AboutAdditions.txt" />
-		<TransformFile Include="Transforms\Metadata.xml" />
-		<TransformFile Include="Transforms\EnumFields.xml" />
-		<TransformFile Include="Transforms\EnumMethods.xml" />
-	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
@@ -64,7 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All"/>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -74,5 +62,20 @@
 		</PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+		<Reference Include="Mono.Android" />
+		<None Include="Jars\AboutJars.txt" />
+		<None Include="Additions\AboutAdditions.txt" />
+		<TransformFile Include="Transforms\Metadata.xml" />
+		<TransformFile Include="Transforms\EnumFields.xml" />
+		<TransformFile Include="Transforms\EnumMethods.xml" />
+	</ItemGroup>
+
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+		</ItemGroup>
+	</Target>
 </Project>

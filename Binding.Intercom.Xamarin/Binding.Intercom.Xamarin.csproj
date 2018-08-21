@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81;xamarinios10</TargetFrameworks>
+		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<OutputType>module</OutputType>
