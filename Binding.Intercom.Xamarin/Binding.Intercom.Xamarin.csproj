@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid70;monoandroid71;xamarinios10</TargetFrameworks>
+		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81;xamarinios10</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<OutputType>module</OutputType>
@@ -16,7 +16,7 @@
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
 			<PrivateAssets>all</PrivateAssets>
@@ -24,23 +24,31 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="23.4.0.1" />
 	</ItemGroup>
-	
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="26.1.0.1" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="26.1.0.1" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
+		<PackageReference Include="Xamarin.Android.Support.Constraint.Layout" Version="1.1.2" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+	</ItemGroup>
+
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='MonoAndroid'">
-		<ProjectReference Include="../Binding.Intercom.Android.Base/Binding.Intercom.Android.Base.csproj"
-											PrivateAssets="All"/>
-		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj"
-											PrivateAssets="All" />
-		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj"
-											PrivateAssets="All" />
+		<ProjectReference Include="../Binding.Intercom.Android.Base/Binding.Intercom.Android.Base.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
@@ -49,7 +57,7 @@
 
 	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
 		<ItemGroup>
-			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')->WithMetadataValue('PrivateAssets', 'All'))" />
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
 		</ItemGroup>
 	</Target>
 </Project>

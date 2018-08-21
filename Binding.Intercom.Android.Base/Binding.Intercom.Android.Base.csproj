@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid70;monoandroid71</TargetFrameworks>
+		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
 		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
@@ -14,20 +14,42 @@
 		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
 	</PropertyGroup>
 	
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+	</PropertyGroup>
+	
 	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="23.4.0.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-base-4.1.7.aar" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-base-4.1.7.aar" />
 	</ItemGroup>
 	
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="26.1.0.1" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="26.1.0.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-base-4.1.9.aar" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
+		<PackageReference Include="Xamarin.Android.Support.Constraint.Layout" Version="1.1.2" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-base-5.1.0.aar" />
+	</ItemGroup>
+
 	<ItemGroup>
 		<None Include="Jars\AboutJars.txt" />
 		<None Include="Additions\AboutAdditions.txt" />
-		<LibraryProjectZip Include="Jars\intercom-sdk-base-4.1.7.aar" />
 	</ItemGroup>
 	
 	<ItemGroup>

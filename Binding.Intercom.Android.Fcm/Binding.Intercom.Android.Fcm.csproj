@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid71</TargetFrameworks>
+		<TargetFrameworks>monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
 		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
@@ -20,32 +20,47 @@
 		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
 	</PropertyGroup>
 
-	<PropertyGroup>
-
-		<Authors>nventive</Authors>
-		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
-		<PackageId>Uno.Binding.Intercom.Android.Fcm</PackageId>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
 		<DefineConstants>$(DefineConstants);MONOANDROID7_1</DefineConstants>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+		<DefineConstants>$(DefineConstants);MONOANDROID8_0</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+		<DefineConstants>$(DefineConstants);MONOANDROID8_1</DefineConstants>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<Reference Include="Mono.Android" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Include="Jars\AboutJars.txt" />
 		<None Include="Additions\AboutAdditions.txt" />
-		<LibraryProjectZip Include="Jars\intercom-sdk-fcm-4.1.7.aar" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<TransformFile Include="Transforms\Metadata.xml" />
 		<TransformFile Include="Transforms\EnumFields.xml" />
 		<TransformFile Include="Transforms\EnumMethods.xml" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
+		<PackageReference Include="Xamarin.Firebase.Messaging" Version="42.1021.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-fcm-4.1.7.aar" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="26.1.0.1" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="26.1.0.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-fcm-4.1.9.aar" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
+		<PackageReference Include="Xamarin.Android.Support.Constraint.Layout" Version="1.1.2" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
+		<LibraryProjectZip Include="Jars\intercom-sdk-fcm-5.1.0.aar" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -57,8 +72,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
-		<PackageReference Include="Xamarin.Firebase.Messaging" Version="42.1021.1" />
 	</ItemGroup>
 
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
