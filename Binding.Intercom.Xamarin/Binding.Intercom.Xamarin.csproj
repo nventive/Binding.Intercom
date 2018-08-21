@@ -1,0 +1,55 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+	<PropertyGroup>
+		<TargetFrameworks>monoandroid70;monoandroid71;xamarinios10</TargetFrameworks>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+		<OutputType>module</OutputType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>nventive.Binding.Intercom</PackageId>
+		<Title>Intercom SDK Binding</Title>
+		<Description>A Xamarin binding over the Intercom SDK</Description>
+		<Authors>nventive</Authors>
+		<Owners>nventive</Owners>
+		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="23.4.0.1" />
+	</ItemGroup>
+	
+	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
+		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='MonoAndroid'">
+		<ProjectReference Include="../Binding.Intercom.Android.Base/Binding.Intercom.Android.Base.csproj"
+											PrivateAssets="All"/>
+		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj"
+											PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj"
+											PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
+		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" />
+	</ItemGroup>
+
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')->WithMetadataValue('PrivateAssets', 'All'))" />
+		</ItemGroup>
+	</Target>
+</Project>

@@ -1,34 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid70;MonoAndroid71</TargetFrameworks>
-		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
-		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
-		<AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<TargetFrameworks>monoandroid70;monoandroid71</TargetFrameworks>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<AppendTargetFrameworkToIntermediateOutputPath>false</AppendTargetFrameworkToIntermediateOutputPath>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+	
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID7_0</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
-		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID7_1</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<Reference Include="Mono.Android" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="23.4.0.1" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
 	</ItemGroup>
@@ -53,5 +45,4 @@
 	</ItemGroup>
 
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
-
 </Project>

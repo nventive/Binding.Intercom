@@ -1,36 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
-		<TargetFrameworks>MonoAndroid70;MonoAndroid71</TargetFrameworks>
-		<Authors>nventive</Authors>
-		<Description>An Android binding over Intercom SDK</Description>
-		<PackageId>Uno.Binding.Intercom.Android</PackageId>
-		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
-		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
-		<AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<TargetFrameworks>monoandroid70;monoandroid71</TargetFrameworks>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+	
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID7_0</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-		<DefineConstants>$(DefineConstants);MONOANDROID7_1</DefineConstants>
 	</PropertyGroup>
 	
-	<ItemGroup>
-		<Reference Include="Mono.Android" />
-	</ItemGroup>
-	
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid70'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="23.4.0.1" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="25.3.1" />
 		<PackageReference Include="Xamarin.Android.Support.Design" Version="25.3.1" />
 	</ItemGroup>
@@ -49,44 +38,10 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<TransformFile Include="Transforms\Metadata.xml">
-			<SubType>Designer</SubType>
-		</TransformFile>
+		<TransformFile Include="Transforms\Metadata.xml" />
 		<TransformFile Include="Transforms\EnumFields.xml" />
 		<TransformFile Include="Transforms\EnumMethods.xml" />
 	</ItemGroup>
-	
-	
-	<ItemGroup>
-		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
-		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj" PrivateAssets="All" />
-	</ItemGroup>
-	
-	
-	<Target Name="IncludeDependencies" AfterTargets="Build">
-		<ItemGroup>
-			<!--IMPORTANT: $(TargetFramework) is not set when executing the target-->
-			<Content Include="bin\$(Configuration)\monoandroid70\Binding.Intercom.Android.Composer.dll">
-				<Pack>true</Pack>
-				<PackagePath>lib/monoandroid70</PackagePath>
-			</Content>
-			<!--IMPORTANT: $(TargetFramework) is not set when executing the target-->
-			<Content Include="bin\$(Configuration)\monoandroid71\Binding.Intercom.Android.Composer.dll">
-				<Pack>true</Pack>
-				<PackagePath>lib/monoandroid71</PackagePath>
-			</Content>
-			<!--IMPORTANT: $(TargetFramework) is not set when executing the target-->
-			<Content Include="bin\$(Configuration)\monoandroid70\Binding.Intercom.Android.Composer.Gallery.dll">
-				<Pack>true</Pack>
-				<PackagePath>lib/monoandroid70</PackagePath>
-			</Content>
-			<!--IMPORTANT: $(TargetFramework) is not set when executing the target-->
-			<Content Include="bin\$(Configuration)\monoandroid71\Binding.Intercom.Android.Composer.Gallery.dll">
-				<Pack>true</Pack>
-				<PackagePath>lib/monoandroid71</PackagePath>
-			</Content>
-		</ItemGroup>
-	</Target>
 
 	<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
 </Project>

@@ -19,7 +19,7 @@ phases:
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory) /p:GeneratePackageOnBuild=true
+      msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory)
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false

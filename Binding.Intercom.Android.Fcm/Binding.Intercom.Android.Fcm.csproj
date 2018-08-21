@@ -1,16 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 	<PropertyGroup>
 		<TargetFrameworks>MonoAndroid71</TargetFrameworks>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Authors>nventive</Authors>
-		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
-		<PackageId>Uno.Binding.Intercom.Android.Fcm</PackageId>
-		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>		<AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
 		<JavaOptions>$(JavaOptions) -noverify </JavaOptions>
 		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
 		<AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
 		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
 		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>nventive.Binding.Intercom.Android.Fcm</PackageId>
+		<Title>Intercom SDK Binding for Firebase</Title>
+		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
+		<Authors>nventive</Authors>
+		<Owners>nventive</Owners>
+		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+
+		<Authors>nventive</Authors>
+		<Description>An Android binding over Intercom SDK to support Firebase Notification</Description>
+		<PackageId>Uno.Binding.Intercom.Android.Fcm</PackageId>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid71'">
