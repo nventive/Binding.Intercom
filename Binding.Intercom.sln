@@ -21,9 +21,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{D9BCD5C3-F44C-42AE-A080-D0D2C6B3272E}"
 	ProjectSection(SolutionItems) = preProject
 		Build\Build.proj = Build\Build.proj
+		Xamarin.Android.Common.props = Xamarin.Android.Common.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Xamarin", "Binding.Intercom.Xamarin\Binding.Intercom.Xamarin.csproj", "{47E30BFE-B181-40FD-8D8F-7518E04E9AD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Xamarin", "Binding.Intercom.Xamarin\Binding.Intercom.Xamarin.csproj", "{47E30BFE-B181-40FD-8D8F-7518E04E9AD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

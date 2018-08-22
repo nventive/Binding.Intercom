@@ -1,0 +1,26 @@
+<Project>
+	<PropertyGroup>
+		<TargetFrameworkIdentifier>MonoAndroid</TargetFrameworkIdentifier>
+		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<GeneratedOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\$(TargetFramework)\generated\</GeneratedOutputPath>
+		<IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\$(TargetFramework)\</IntermediateOutputPath>
+		<DesignTimeBuild Condition="'$(GeneratePackageOnBuild)'=='true'">false</DesignTimeBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
+		<TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
+		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
+		<TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
+		<TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+	</PropertyGroup>
+</Project>

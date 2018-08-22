@@ -8,7 +8,7 @@
 		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
 		<DefineConstants>$(DefineConstants);IOS1_0;XAMARIN;XAMARIN_IOS;XAMARIN_IOS_UNIFIED</DefineConstants>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
+		<OutputPath>bin/$(Configuration)/$(TargetFramework)/</OutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">

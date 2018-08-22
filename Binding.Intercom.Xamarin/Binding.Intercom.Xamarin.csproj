@@ -52,7 +52,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
-		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" />
+		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
