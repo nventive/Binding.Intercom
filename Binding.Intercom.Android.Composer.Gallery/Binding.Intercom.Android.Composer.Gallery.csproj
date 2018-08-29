@@ -2,25 +2,9 @@
 	<PropertyGroup>
 		<TargetFrameworks>monoandroid70;monoandroid71;monoandroid80;monoandroid81</TargetFrameworks>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)</OutputPath>
-		<GeneratedOutputPath>obj\$(Configuration)\$(TargetFramework)\generated\</GeneratedOutputPath>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
-		<TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid71'">
-		<TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid80'">
-		<TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid81'">
-		<TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-	</PropertyGroup>
+	<Import Project="../Xamarin.Android.Common.props" />
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid70'">
 		<PackageReference Include="Xamarin.Android.Support.v4" Version="23.4.0.1" />
