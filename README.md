@@ -61,6 +61,8 @@ The source for the SDK can be found [here](https://github.com/intercom/intercom-
 
 The bindings were generated for the version **6.1.0**.
 
+To upgrade to v6.0.0 please [follow the migration guide](https://developers.intercom.com/installing-intercom/docs/migrating-to-v600). Changes are required to your code if you support push notifications or deep linking within your app.
+
 ### How to use
 
 Add a reference to the following packages:
