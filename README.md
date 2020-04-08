@@ -59,7 +59,7 @@ Documentation for using the library inside an iOS project can be found [here](ht
 
 The source for the SDK can be found [here](https://github.com/intercom/intercom-ios). 
 
-The bindings were generated for the version **4.1.9**.
+The bindings were generated for the version **6.1.0**.
 
 ### How to use
 
