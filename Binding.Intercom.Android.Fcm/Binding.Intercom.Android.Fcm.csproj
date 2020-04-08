@@ -54,7 +54,7 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\intercom-sdk-fcm-5.1.6.aar" />
+    <LibraryProjectZip Include="Jars\intercom-sdk-fcm-6.1.0.aar" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\Metadata.xml" />

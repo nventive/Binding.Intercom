@@ -10,7 +10,7 @@ Documentation for using the library inside an Android project can be found [here
 
 The source for the SDK can be found [here](https://github.com/intercom/intercom-android). 
 
-The bindings were generated for the version **4.1.7**.
+The bindings were generated for the version **6.1.0**.
 
 ### Note
 
