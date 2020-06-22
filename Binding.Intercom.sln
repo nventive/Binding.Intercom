@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.iOS", "Binding.Intercom.iOS\Binding.Intercom.iOS.csproj", "{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{211CFEC6-5768-4F68-8794-7F9471A7C6E6}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -26,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Fcm", "Binding.Intercom.Android.Fcm\Binding.Intercom.Android.Fcm.csproj", "{67ABBA01-23F2-410A-B5C8-45420101F5F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.iOS", "Binding.Intercom.iOS\Binding.Intercom.iOS.csproj", "{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,13 +34,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FD89AA3-949C-4B25-A31E-3E4BA8A8BEC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47E30BFE-B181-40FD-8D8F-7518E04E9AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47E30BFE-B181-40FD-8D8F-7518E04E9AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47E30BFE-B181-40FD-8D8F-7518E04E9AD5}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +74,14 @@ Global
 		{67ABBA01-23F2-410A-B5C8-45420101F5F6}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
 		{67ABBA01-23F2-410A-B5C8-45420101F5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67ABBA01-23F2-410A-B5C8-45420101F5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

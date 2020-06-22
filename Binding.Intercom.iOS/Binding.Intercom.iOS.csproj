@@ -1,97 +1,52 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
-	<PropertyGroup>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-		<TargetFramework>Xamarin.iOS10</TargetFramework>
-		<TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
-		<TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-		<NuGetTargetMoniker>Xamarin.iOS,Version=v1.0</NuGetTargetMoniker>
-		<IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-		<DefineConstants>$(DefineConstants);IOS1_0;XAMARIN;XAMARIN_IOS;XAMARIN_IOS_UNIFIED</DefineConstants>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<OutputPath>bin/$(Configuration)/$(TargetFramework)/</OutputPath>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-		<DebugType>full</DebugType>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<Reference Include="System" />
-		<Reference Include="Xamarin.iOS" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Remove="ApiDefinition.cs" />
-		<Compile Remove="Structs.cs" />
-		<None Include="ApiDefinition.cs" />
-		<None Include="Structs.cs" />
-		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-		<ObjcBindingCoreSource Include="Structs.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<BundleResource Include="Resources/Intercom.bundle/**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<NativeReference Include="Intercom.framework">
-			<Kind>Framework</Kind>
-			<Frameworks>Foundation</Frameworks>
-			<ForceLoad>True</ForceLoad>
-			<LinkerFlags>-ObjC</LinkerFlags>
-		</NativeReference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
-	<Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
-	
-	<!-- Copied from C:\Program Files (x86)\Microsoft Visual Studio\Preview\Professional\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets -->
-	<!-- Modified to prevent NuGet to attempt to look for the native manifest -->
-	<Target Name="BuiltProjectOutputGroup" Returns="@(BuiltProjectOutputGroupOutput)" DependsOnTargets="$(BuiltProjectOutputGroupDependsOn)">
-		<ItemGroup>
-			<_BuiltProjectOutputGroupOutputIntermediate Include="@(BuiltProjectOutputGroupKeyOutput)" />
-		</ItemGroup>
-
-		<!-- This item represents the app.config file -->
-		<ItemGroup>
-			<_BuiltProjectOutputGroupOutputIntermediate Include="$(AppConfig)" Condition="'$(AddAppConfigToBuildOutputs)'=='true'">
-				<FinalOutputPath>$(TargetDir)$(TargetFileName).config</FinalOutputPath>
-				<TargetPath>$(TargetFileName).config</TargetPath>
-				<!-- For compatibility with 2.0 -->
-				<OriginalItemSpec>$(AppConfig)</OriginalItemSpec>
-			</_BuiltProjectOutputGroupOutputIntermediate>
-		</ItemGroup>
-
-		<ItemGroup>
-			<_IsolatedComReference Include="@(COMReference)" Condition=" '%(COMReference.Isolated)' == 'true' " />
-			<_IsolatedComReference Include="@(COMFileReference)" Condition=" '%(COMFileReference.Isolated)' == 'true' " />
-		</ItemGroup>
-
-		<!-- This is the part that's causing issues, since the manifest is not generated but still looked for by NuGet pack -->
-		<!-- This item represents the native manifest, example: WindowsApplication1.exe.manifest or Native.ClassLibrary1.manifest -->
-		<!--<ItemGroup>
-			<_BuiltProjectOutputGroupOutputIntermediate Include="$(OutDir)$(_DeploymentTargetApplicationManifestFileName)" Condition="'@(NativeReference)'!='' or '@(_IsolatedComReference)'!=''">
-				<TargetPath>$(_DeploymentTargetApplicationManifestFileName)</TargetPath>
-				-->
-		<!-- For compatibility with 2.0 -->
-		<!--
-				<OriginalItemSpec>$(OutDir)$(_DeploymentTargetApplicationManifestFileName)</OriginalItemSpec>
-			</_BuiltProjectOutputGroupOutputIntermediate>
-		</ItemGroup>-->
-
-		<!-- Convert intermediate items into final items; this way we can get the full path for each item -->
-		<ItemGroup>
-			<BuiltProjectOutputGroupOutput Include="@(_BuiltProjectOutputGroupOutputIntermediate->'%(FullPath)')">
-				<!-- For compatibility with 2.0 -->
-				<OriginalItemSpec Condition="'%(_BuiltProjectOutputGroupOutputIntermediate.OriginalItemSpec)' == ''">%(_BuiltProjectOutputGroupOutputIntermediate.FullPath)</OriginalItemSpec>
-			</BuiltProjectOutputGroupOutput>
-		</ItemGroup>
-	</Target>
-	
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{F7446450-C8AB-4FBA-B3F9-090C266E9CDC}</ProjectGuid>
+    <TemplateGuid>{b6f3ff35-79b2-4f25-a2fc-60a7cf61013b}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Binding.Intercom.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Binding.Intercom.iOS</AssemblyName>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="Structs.cs" />
+    <BundleResource Include="Resources/Intercom.bundle/**" />
+    <NativeReference Include="Intercom.framework">
+      <Kind>Framework</Kind>
+      <Frameworks>Foundation</Frameworks>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-ObjC</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
