@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ICMUserAttributes.h"
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
-#error This version of Intercom for iOS supports iOS 8.0 upwards.
-#endif
+#import <Intercom/ICMUserAttributes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -254,6 +250,22 @@ NS_ASSUME_NONNULL_BEGIN
  Present the help center.
  */
 + (void)presentHelpCenter;
+
+#pragma mark - Articles
+
+/*!
+ Present an article.
+ @param articleId The ID of the article to be presented.
+ */
++ (void)presentArticle:(nonnull NSString *)articleId;
+
+#pragma mark - Mobile Carousels
+
+/*!
+ Present a Mobile Carousel.
+ @param carouselId The ID of the Mobile Carousel to be presented.
+ */
++ (void)presentCarousel:(nonnull NSString *)carouselId;
 
 #pragma mark - Push Notifications
 

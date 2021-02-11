@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ICMCompany.h"
+#import <Intercom/ICMCompany.h>
 
 /**
  The ICMUserAttributes object is used for updating a user in Intercom.
