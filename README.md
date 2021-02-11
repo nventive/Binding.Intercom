@@ -59,9 +59,9 @@ Documentation for using the library inside an iOS project can be found [here](ht
 
 The source for the SDK can be found [here](https://github.com/intercom/intercom-ios). 
 
-The bindings were generated for the version **6.1.0**.
+The bindings were generated for the version **9.3.1**.
 
-To upgrade to v6.0.0 please [follow the migration guide](https://developers.intercom.com/installing-intercom/docs/migrating-to-v600). Changes are required to your code if you support push notifications or deep linking within your app.
+To upgrade to v9.0.0 please [follow the migration guide](https://developers.intercom.com/installing-intercom/docs/migrating-to-v9).
 
 ### How to use
 
