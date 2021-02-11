@@ -1,6 +1,5 @@
 ﻿using System;
 using Foundation;
-using Intercom;
 using ObjCRuntime;
 
 namespace Binding.Intercom.iOS
