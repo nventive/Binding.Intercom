@@ -176,17 +176,22 @@ namespace Binding.Intercom.iOS
 		[Export("presentMessenger")]
 		void PresentMessenger();
 
-		// +(void)presentMessageComposer;
+		// +(void)presentMessageComposer:(NSString * _Nullable)initialMessage;
+		[Static]
+		[Export("presentMessageComposer:")]
+		void PresentMessageComposer([NullAllowed] string initialMessage);
+
+		// +(void)presentMessageComposer __attribute__((deprecated("'+[Intercom presentMessageComposer]' is deprecated. 'Use +[Intercom presentMessageComposer:initialMessage]' instead.")));
 		[Static]
 		[Export("presentMessageComposer")]
 		void PresentMessageComposer();
 
-		// +(void)presentMessageComposerWithInitialMessage:(NSString * _Nonnull)message;
+		// +(void)presentMessageComposerWithInitialMessage:(NSString * _Nonnull)message __attribute__((deprecated("'+[Intercom presentMessageComposerWithInitialMessage]' is deprecated. 'Use +[Intercom presentMessageComposer:initialMessage]' instead.")));
 		[Static]
 		[Export("presentMessageComposerWithInitialMessage:")]
 		void PresentMessageComposerWithInitialMessage(string message);
 
-		// +(void)presentConversationList;
+		// +(void)presentConversationList __attribute__((deprecated("'+[Intercom presentConversationList]' is deprecated. 'Use +[Intercom presentMessenger]' instead.")));
 		[Static]
 		[Export("presentConversationList")]
 		void PresentConversationList();
@@ -195,6 +200,16 @@ namespace Binding.Intercom.iOS
 		[Static]
 		[Export("presentHelpCenter")]
 		void PresentHelpCenter();
+
+		// +(void)presentArticle:(NSString * _Nonnull)articleId;
+		[Static]
+		[Export("presentArticle:")]
+		void PresentArticle(string articleId);
+
+		// +(void)presentCarousel:(NSString * _Nonnull)carouselId;
+		[Static]
+		[Export("presentCarousel:")]
+		void PresentCarousel(string carouselId);
 
 		// +(void)setDeviceToken:(NSData * _Nonnull)deviceToken;
 		[Static]
@@ -234,7 +249,7 @@ namespace Binding.Intercom.iOS
 		// +(NSUInteger)unreadConversationCount;
 		[Static]
 		[Export("unreadConversationCount")]
-		int UnreadConversationCount { get; }
+		nuint UnreadConversationCount { get; }
 
 		// +(void)enableLogging;
 		[Static]
@@ -273,12 +288,22 @@ namespace Binding.Intercom.iOS
 		// extern NSString *const _Nonnull IntercomDidStartNewConversationNotification __attribute__((visibility("default")));
 		[Field("IntercomDidStartNewConversationNotification", "__Internal")]
 		NSString IntercomDidStartNewConversationNotification { get; }
-	}
 
-	// @interface Experimental (Intercom)
-	[Category]
-	[BaseType(typeof(Intercom))]
-	interface Intercom_Experimental
-	{
+		// extern NSString *const _Nonnull IntercomHelpCenterWillShowNotification __attribute__((visibility("default")));
+		[Field("IntercomHelpCenterWillShowNotification", "__Internal")]
+		NSString IntercomHelpCenterWillShowNotification { get; }
+
+		// extern NSString *const _Nonnull IntercomHelpCenterDidShowNotification __attribute__((visibility("default")));
+		[Field("IntercomHelpCenterDidShowNotification", "__Internal")]
+		NSString IntercomHelpCenterDidShowNotification { get; }
+
+		// extern NSString *const _Nonnull IntercomHelpCenterWillHideNotification __attribute__((visibility("default")));
+		[Field("IntercomHelpCenterWillHideNotification", "__Internal")]
+		NSString IntercomHelpCenterWillHideNotification { get; }
+
+		// extern NSString *const _Nonnull IntercomHelpCenterDidHideNotification __attribute__((visibility("default")));
+		[Field("IntercomHelpCenterDidHideNotification", "__Internal")]
+		NSString IntercomHelpCenterDidHideNotification { get; }
 	}
 }
+
