@@ -36,24 +36,20 @@ namespace Binding.Intercom.iOS
 		// +(NSString * _Nonnull)nullStringAttribute;
 		[Static]
 		[Export("nullStringAttribute")]
-		[Verify(MethodToProperty)]
 		string NullStringAttribute { get; }
 
 		// +(NSNumber * _Nonnull)nullNumberAttribute;
 		[Static]
 		[Export("nullNumberAttribute")]
-		[Verify(MethodToProperty)]
 		NSNumber NullNumberAttribute { get; }
 
 		// +(NSDate * _Nonnull)nullDateAttribute;
 		[Static]
 		[Export("nullDateAttribute")]
-		[Verify(MethodToProperty)]
 		NSDate NullDateAttribute { get; }
 
 		// -(NSDictionary<NSString *,id> * _Nonnull)attributes;
 		[Export("attributes")]
-		[Verify(MethodToProperty)]
 		NSDictionary<NSString, NSObject> Attributes { get; }
 	}
 
@@ -100,24 +96,20 @@ namespace Binding.Intercom.iOS
 		// +(NSString * _Nonnull)nullStringAttribute;
 		[Static]
 		[Export("nullStringAttribute")]
-		[Verify(MethodToProperty)]
 		string NullStringAttribute { get; }
 
 		// +(NSNumber * _Nonnull)nullNumberAttribute;
 		[Static]
 		[Export("nullNumberAttribute")]
-		[Verify(MethodToProperty)]
 		NSNumber NullNumberAttribute { get; }
 
 		// +(NSDate * _Nonnull)nullDateAttribute;
 		[Static]
 		[Export("nullDateAttribute")]
-		[Verify(MethodToProperty)]
 		NSDate NullDateAttribute { get; }
 
 		// -(NSDictionary<NSString *,id> * _Nonnull)attributes;
 		[Export("attributes")]
-		[Verify(MethodToProperty)]
 		NSDictionary<NSString, NSObject> Attributes { get; }
 	}
 
@@ -258,7 +250,6 @@ namespace Binding.Intercom.iOS
 		// +(NSUInteger)unreadConversationCount;
 		[Static]
 		[Export("unreadConversationCount")]
-		[Verify(MethodToProperty)]
 		nuint UnreadConversationCount { get; }
 
 		// +(void)enableLogging;
@@ -273,7 +264,6 @@ namespace Binding.Intercom.iOS
 	}
 
 	[Static]
-	[Verify(ConstantsInterfaceAssociation)]
 	partial interface Constants
 	{
 		// extern NSString *const _Nonnull IntercomUnreadConversationCountDidChangeNotification __attribute__((visibility("default")));
