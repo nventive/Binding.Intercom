@@ -12,3 +12,4 @@ namespace Binding.Intercom.iOS
 		TopRight = 3
 	}
 }
+

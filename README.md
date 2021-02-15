@@ -59,6 +59,8 @@ Documentation for using the library inside an iOS project can be found [here](ht
 
 The source for the SDK can be found [here](https://github.com/intercom/intercom-ios). 
 
+By default inside Intercom.framework folder, we use ios-arm64_armv7 to be able to deploy on physical device. If you need to deploy on Simulator, you will need to replace the content with ios-arm64_i386_x86_64-simulator.
+
 The bindings were generated for the version **9.3.1**.
 
 To upgrade to v9.0.0 please [follow the migration guide](https://developers.intercom.com/installing-intercom/docs/migrating-to-v9).
