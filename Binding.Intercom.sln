@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.iOS", "Bin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Twig", "Binding.Intercom.Twig\Binding.Intercom.Twig.csproj", "{F3812689-4F71-44EB-928F-4502CAFB0A19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Nexus", "Binding.Intercom.Nexus\Binding.Intercom.Nexus.csproj", "{A2BFA327-5FF5-409B-908B-F20F59890588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Commons", "Binding.Intercom.Android.Commons\Binding.Intercom.Android.Commons.csproj", "{5BF100DC-A5B4-4362-971A-C37D67407F24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +96,22 @@ Global
 		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
 		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BFA327-5FF5-409B-908B-F20F59890588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF100DC-A5B4-4362-971A-C37D67407F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
