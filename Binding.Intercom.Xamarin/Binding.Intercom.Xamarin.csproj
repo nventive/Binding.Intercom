@@ -43,6 +43,8 @@
 		<ProjectReference Include="..\Binding.Intercom.Android.Commons\Binding.Intercom.Android.Commons.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Twig\Binding.Intercom.Twig.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Nexus\Binding.Intercom.Nexus.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Retrofit\Binding.Intercom.Retrofit.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Retrofit.Converter.Gson\Binding.Intercom.Retrofit.Converter.Gson.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
