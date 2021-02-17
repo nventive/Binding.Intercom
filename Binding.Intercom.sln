@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Android.Fc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.iOS", "Binding.Intercom.iOS\Binding.Intercom.iOS.csproj", "{A016D852-BD48-4B0E-BE21-553989C9676B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Twig", "Binding.Intercom.Twig\Binding.Intercom.Twig.csproj", "{F3812689-4F71-44EB-928F-4502CAFB0A19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,14 @@ Global
 		{A016D852-BD48-4B0E-BE21-553989C9676B}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
 		{A016D852-BD48-4B0E-BE21-553989C9676B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A016D852-BD48-4B0E-BE21-553989C9676B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3812689-4F71-44EB-928F-4502CAFB0A19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
