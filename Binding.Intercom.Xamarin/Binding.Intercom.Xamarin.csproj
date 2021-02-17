@@ -24,18 +24,6 @@
 		</PackageReference>
 	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'monoandroid11.0'">
-		<PackageReference Include="FlexboxLayoutXamarinBindingAndroid">
-		  <Version>1.0.2</Version>
-		</PackageReference>
-		<PackageReference Include="Xamarin.AndroidX.AppCompat">
-			<Version>1.1.0</Version>
-		</PackageReference>
-		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
-			<Version>1.1.3</Version>
-		</PackageReference>
-  </ItemGroup>
-
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='MonoAndroid'">
 		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
@@ -45,6 +33,7 @@
 		<ProjectReference Include="..\Binding.Intercom.Nexus\Binding.Intercom.Nexus.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit\Binding.Intercom.Retrofit.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit.Converter.Gson\Binding.Intercom.Retrofit.Converter.Gson.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Otto\Binding.Intercom.Otto.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
