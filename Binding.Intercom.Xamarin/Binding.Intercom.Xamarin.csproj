@@ -12,10 +12,15 @@
 		<Description>A Xamarin binding over the Intercom SDK</Description>
 		<Authors>nventive</Authors>
 		<Owners>nventive</Owners>
-		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageIcon>nugetIcon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
-		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
+
+
+	<ItemGroup>
+		<None Include="nugetIcon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
