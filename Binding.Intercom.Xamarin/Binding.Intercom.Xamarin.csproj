@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid11.0;xamarinios10</TargetFrameworks>
+		<TargetFrameworks>monoandroid11.0</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<OutputType>module</OutputType>
@@ -72,9 +72,9 @@
 		<ProjectReference Include="..\Binding.Intercom.Otto\Binding.Intercom.Otto.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
+	<!--<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
 		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" PrivateAssets="All" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
 		<ItemGroup>
