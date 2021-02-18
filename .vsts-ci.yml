@@ -1,4 +1,4 @@
-trigger:        # Use this if you want runs whenever the master branch is updated.
+trigger:
   branches:
     include:
       - master
