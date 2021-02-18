@@ -4,7 +4,7 @@ trigger:        # Use this if you want runs whenever the master branch is update
       - master
 
 pool:
-  vmImage: windows-2019
+  vmImage: macOS-latest
 
 resources:
 - repo: self
