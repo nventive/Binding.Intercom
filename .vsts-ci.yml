@@ -1,35 +1,41 @@
+trigger:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: macos-latest
+
 resources:
 - repo: self
   clean: true
   lfs: true
 
-phases:
-- phase: Main
-  steps:
-  - task: NuGetToolInstaller@0
+steps:
+- task: NuGetToolInstaller@0
 
-  - task: NuGetCommand@2
-    inputs:
-      solution: "Binding.Intercom.sln"
-      feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
+- task: NuGetCommand@2
+  inputs:
+    solution: "Binding.Intercom.sln"
+    feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
 
-  - task: MSBuild@1
-    inputs:
-      solution: Binding.Intercom.sln
-      msbuildLocationMethod: version
-      msbuildVersion: latest
-      msbuildArchitecture: x86
-      msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory)
-      clean: false
-      maximumCpuCount: true
-      restoreNugetPackages: false
-      logProjectEvents: false
-      createLogFile: false
-      platform: 'Any CPU'
-      configuration: Release
+- task: MSBuild@1
+  inputs:
+    solution: Binding.Intercom.sln
+    msbuildLocationMethod: version
+    msbuildVersion: latest
+    msbuildArchitecture: x86
+    msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory)
+    clean: false
+    maximumCpuCount: true
+    restoreNugetPackages: false
+    logProjectEvents: false
+    createLogFile: false
+    platform: 'Any CPU'
+    configuration: Release
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: $(build.artifactstagingdirectory)
-      ArtifactName: $(build.definitionname)
-      ArtifactType: "Container"
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(build.artifactstagingdirectory)
+    ArtifactName: $(build.definitionname)
+    ArtifactType: "Container"

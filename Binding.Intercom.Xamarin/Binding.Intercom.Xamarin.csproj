@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid90;xamarinios10</TargetFrameworks>
+		<TargetFrameworks>monoandroid11.0;monoandroid10.0;xamarinios10</TargetFrameworks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
 		<OutputType>module</OutputType>
@@ -12,10 +12,15 @@
 		<Description>A Xamarin binding over the Intercom SDK</Description>
 		<Authors>nventive</Authors>
 		<Owners>nventive</Owners>
-		<PackageIconUrl>https://nv-assets.azurewebsites.net/logos/nv_small_square_logo.jpg</PackageIconUrl>
+		<PackageIcon>nugetIcon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
-		<PackageLicenseUrl>https://github.com/nventive/Binding.Intercom/blob/master/License.md</PackageLicenseUrl>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
+
+
+	<ItemGroup>
+		<None Include="nugetIcon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="GitVersionTask" Version="4.0.0-beta0012">
@@ -24,17 +29,54 @@
 		</PackageReference>
 	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'monoandroid90'">
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
-    <PackageReference Include="Xamarin.Android.Support.Constraint.Layout" Version="1.1.2" />
-    <PackageReference Include="FlexboxLayoutXamarinBindingAndroid" Version="1.0.2" />
-  </ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid11.0'">
+		<PackageReference Include="FlexboxLayoutXamarinBindingAndroid" Version="1.0.2" />
+		<PackageReference Include="GoogleGson" Version="2.8.5" />
+		<PackageReference Include="Xamarin.Android.Glide" Version="4.11.0" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.1.0.7" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0" />
+		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="1.1.3" />
+		<PackageReference Include="Xamarin.AndroidX.Core" Version="1.3.2" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.2.5.1" />
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.6" />
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.VectorDrawable" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.VectorDrawable.Animated" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.4.20" />
+		<PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0" />
+		<PackageReference Include="XamarinLibrary.Xamarin.Android.Facebook.Shimmer" Version="0.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid10.0'">
+		<PackageReference Include="FlexboxLayoutXamarinBindingAndroid" Version="1.0.2" />
+		<PackageReference Include="GoogleGson" Version="2.8.5" />
+		<PackageReference Include="Xamarin.Android.Glide" Version="4.11.0" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.1.0.7" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0" />
+		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="1.1.3" />
+		<PackageReference Include="Xamarin.AndroidX.Core" Version="1.3.2" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.2.5.1" />
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.6" />
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.VectorDrawable" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.AndroidX.VectorDrawable.Animated" Version="1.1.0.5" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.4.20" />
+		<PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0" />
+		<PackageReference Include="XamarinLibrary.Xamarin.Android.Facebook.Shimmer" Version="0.5.0" />
+	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='MonoAndroid'">
 		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Android.Commons\Binding.Intercom.Android.Commons.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Twig\Binding.Intercom.Twig.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Nexus\Binding.Intercom.Nexus.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Retrofit\Binding.Intercom.Retrofit.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Retrofit.Converter.Gson\Binding.Intercom.Retrofit.Converter.Gson.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Otto\Binding.Intercom.Otto.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
