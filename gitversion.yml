@@ -1,17 +1,3 @@
 assembly-versioning-scheme: MajorMinorPatch
-mode: Mainline
-next-version: 4.1
-branches:
-  master:
-    regex: master
-    tag: dev
-    increment: none
-  stable:
-    regex: (stable)
-    tag: 
-    increment: none
-  dev:
-    regex: dev/.*?/(.*?)
-    tag: dev.{BranchName}
-ignore:
-  sha: []
+mode: ContinuousDeployment
+next-version: 5.0.0

@@ -39,3 +39,11 @@ steps:
     PathtoPublish: $(build.artifactstagingdirectory)
     ArtifactName: $(build.definitionname)
     ArtifactType: "Container"
+    
+- task: NuGetCommand@2
+    displayName: 'Publish nuget package'
+    inputs:
+      command: push
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+      publishVstsFeed: '36e50407-5798-43e2-b0e2-a0de0e3f46c6'
+      verbosityPush: Normal
