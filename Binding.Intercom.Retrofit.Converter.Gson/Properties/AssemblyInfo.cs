@@ -6,11 +6,11 @@ using Android.App;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Binding.Intercom.Retrofit.Converter.Gson")]
+[assembly: AssemblyTitle("Binding.Retrofit.Converter.Gson")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Binding.Intercom.Retrofit.Converter.Gson")]
+[assembly: AssemblyProduct("Binding.Retrofit.Converter.Gson")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
