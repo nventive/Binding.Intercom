@@ -1,0 +1,18 @@
+jobs:
+- deployment: Publish_Nuget
+  environment: Nuget
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+          - download: current
+            artifact: $(ArtifactName)
+
+          - task: NuGetCommand@2
+            displayName: 'Publish nuget package'
+            inputs:
+              command: push
+              packagesToPush: '$(Pipeline.Workspace)/$(ArtifactName)/*.nupkg'
+              publishVstsFeed: '36e50407-5798-43e2-b0e2-a0de0e3f46c6'
+              verbosityPush: Normal
+

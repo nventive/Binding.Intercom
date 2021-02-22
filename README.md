@@ -1,5 +1,7 @@
 # Binding.Intercom
 
+![Nuget](https://img.shields.io/nuget/v/nventive.Binding.Intercom)
+
 ## Summary
 
 The following binding are for the **Intercom SDK**.
