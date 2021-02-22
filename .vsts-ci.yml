@@ -3,9 +3,6 @@ trigger:
     include:
       - master
 
-pool:
-  vmImage: macos-latest
-
 resources:
 - repo: self
   clean: true
@@ -13,41 +10,34 @@ resources:
 
 variables:
   IsLightBuild: $[eq(variables['Build.Reason'], 'PullRequest')]
+  PackageOutputPath: $(Build.ArtifactStagingDirectory)
+  NUGET_VERSION: 5.8.1
+  macPoolName: 'macOS-latest'
 
-steps:
-- task: NuGetToolInstaller@0
+stages:
+- stage: Build
 
-- task: NuGetCommand@2
-  inputs:
-    solution: "Binding.Intercom.sln"
-    feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
+  jobs:
+  - job : On_Mac
+    strategy:
+      maxParallel: 1
+      matrix:
+        Xamarin.Binding.Intercom:
+          SolutionFileName: Binding.Intercom.sln
+          ApplicationPlatform: Any CPU
+          ArtifactName: Binding.Intercom
+    pool:
+      vmImage: $(macPoolName)
+      
+    workspace:
+      clean: all
 
-- task: MSBuild@1
-  inputs:
-    solution: Binding.Intercom.sln
-    msbuildLocationMethod: version
-    msbuildVersion: latest
-    msbuildArchitecture: x86
-    msbuildArguments: /p:PackageOutputPath=$(build.artifactstagingdirectory)
-    clean: false
-    maximumCpuCount: true
-    restoreNugetPackages: false
-    logProjectEvents: false
-    createLogFile: false
-    platform: 'Any CPU'
-    configuration: Release
+    steps:
+      - template: build/steps-build.yml
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: $(build.artifactstagingdirectory)
-    ArtifactName: $(build.definitionname)
-    ArtifactType: "Container"
-
-- task: NuGetCommand@2
+- stage : Release
   condition: and(succeeded(), eq(variables['IsLightBuild'], 'false'))
-  displayName: 'Publish nuget package'
-  inputs:
-    command: push
-    packagesToPush: $(build.artifactstagingdirectory)
-    publishVstsFeed: '36e50407-5798-43e2-b0e2-a0de0e3f46c6'
-    verbosityPush: Normal
+  dependsOn: Build
+
+  jobs:
+  - template: build/steps-release.yml
