@@ -11,6 +11,9 @@ resources:
   clean: true
   lfs: true
 
+variables:
+  IsLightBuild: $[eq(variables['Build.Reason'], 'PullRequest')]
+
 steps:
 - task: NuGetToolInstaller@0
 
@@ -41,6 +44,7 @@ steps:
     ArtifactType: "Container"
 
 - task: NuGetCommand@2
+  condition: and(succeeded(), eq(variables['IsLightBuild'], 'false'))
   displayName: 'Publish nuget package'
   inputs:
     command: push
