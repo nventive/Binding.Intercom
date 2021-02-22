@@ -6,13 +6,13 @@ jobs:
       deploy:
         steps:
           - download: current
-            artifact: $(ArtifactName)
+            artifact: Binding.Intercom
 
           - task: NuGetCommand@2
             displayName: 'Publish nuget package'
             inputs:
               command: push
-              packagesToPush: '$(Pipeline.Workspace)/$(ArtifactName)/*.nupkg'
+              packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
               publishVstsFeed: '36e50407-5798-43e2-b0e2-a0de0e3f46c6'
               verbosityPush: Normal
 
