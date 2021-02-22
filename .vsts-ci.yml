@@ -11,6 +11,9 @@ resources:
   clean: true
   lfs: true
 
+variables:
+  IsLightBuild: $[eq(variables['Build.Reason'], 'PullRequest')]
+
 steps:
 - task: NuGetToolInstaller@0
 
@@ -39,3 +42,12 @@ steps:
     PathtoPublish: $(build.artifactstagingdirectory)
     ArtifactName: $(build.definitionname)
     ArtifactType: "Container"
+
+- task: NuGetCommand@2
+  condition: and(succeeded(), eq(variables['IsLightBuild'], 'false'))
+  displayName: 'Publish nuget package'
+  inputs:
+    command: push
+    packagesToPush: $(build.artifactstagingdirectory)
+    publishVstsFeed: '36e50407-5798-43e2-b0e2-a0de0e3f46c6'
+    verbosityPush: Normal
