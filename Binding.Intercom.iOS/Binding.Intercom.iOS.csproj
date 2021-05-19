@@ -93,9 +93,6 @@
     <BundleResource Include="Resources\IntercomTranslations.bundle\zh-hant.strings" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Intercom.framework\Headers\ICMCompany.h" />
-    <Content Include="Intercom.framework\Headers\ICMUserAttributes.h" />
-    <Content Include="Intercom.framework\Headers\Intercom.h" />
     <BundleResource Include="Resources\Intercom.bundle\images\back.png" />
     <BundleResource Include="Resources\Intercom.bundle\images\back%402x.png" />
     <BundleResource Include="Resources\Intercom.bundle\images\back%403x.png" />
