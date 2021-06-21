@@ -1,4 +1,8 @@
 steps:
+
+- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_12_2
+  displayName: 'Select the Xamarin SDK version'
+
 - task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
