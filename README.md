@@ -70,7 +70,7 @@ To upgrade to v9.0.0 please [follow the migration guide](https://developers.inte
 ### How to use
 
 Add a reference to the following packages:
-
+ 
 - Uno.Binding.Intercom.iOS
 
 ### Update Info.plist
