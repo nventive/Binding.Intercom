@@ -1,0 +1,17 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/class[@name='JsonNames.Impl']" />
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/class[@name='JsonArray']" />
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/class[@name='JsonObject']" />
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/class[@name='JsonDecoder.DefaultImpls']" />
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/class[@name='JsonEncoder.DefaultImpls']"/>
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/interface[@name='JsonDecoder']" />
+	<remove-node path="/api/package[@name='kotlinx.serialization.json']/interface[@name='JsonEncoder']" />
+</metadata>

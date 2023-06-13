@@ -33,6 +33,7 @@
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.blocks')]" />
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.common')]" />
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.conversation')]" />
+	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.databinding')]" />
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.errorreporting')]" />
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.exceptions')]" />
 	<remove-node path="/api/package[starts-with(@name,'io.intercom.android.sdk.experimental')]" />
@@ -119,5 +120,6 @@
 				name="name">application</attr>
 	<attr path="/api/package[@name='io.intercom.android.sdk.push']/class[@name='IntercomPushClient']/method[@name='sendTokenToIntercom' and count(parameter)=2 and parameter[1][@type='android.app.Application'] and parameter[2][@type='java.lang.String']]/parameter[@name='p1']"
 				name="name">token</attr>
-
+	<attr path="/api/package[@name='io.intercom.android.sdk.survey.ui.questiontype.numericscale']/class[@name='NumericRatingQuestionKt']"
+				name="name">NumericRatingQuestionKt2</attr>
 </metadata>
