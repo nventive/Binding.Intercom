@@ -1,6 +1,8 @@
 jobs:
 - deployment: Publish_Nuget
   environment: Nuget
+  pool:
+      vmImage: 'ubuntu-20.04'
   strategy:
     runOnce:
       deploy:
