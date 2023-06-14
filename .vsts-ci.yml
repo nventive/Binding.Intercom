@@ -12,7 +12,7 @@ variables:
   IsLightBuild: $[eq(variables['Build.Reason'], 'PullRequest')]
   PackageOutputPath: $(Build.ArtifactStagingDirectory)
   NUGET_VERSION: 6.5.0
-  macPoolName: 'macOS-latest'
+  macPoolName: 'macOS-12'
 
 stages:
 - stage: Build
