@@ -1,9 +1,10 @@
 assembly-versioning-scheme: MajorMinorPatch
 mode: ContinuousDeployment
-next-version: 5.0.1
+next-version: 5.0.2
 continuous-delivery-fallback-tag: ""
 branches:
   master:
-    tag: ''
+    tag: dev
+  
 ignore:
   sha: [] 

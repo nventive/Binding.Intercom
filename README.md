@@ -12,7 +12,7 @@ Documentation for using the library inside an Android project can be found [here
 
 The source for the SDK can be found [here](https://github.com/intercom/intercom-android). 
 
-The bindings were generated for the version **9.1.0**.
+The bindings were generated for the version **12.2.0**.
 
 ### Note
 
@@ -78,3 +78,7 @@ Add a reference to the following packages:
 When installing Intercom, you'll need to make sure that you have a `NSPhotoLibraryUsageDescription` entry in your `Info.plist`.
 
 This is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) for all apps that access the photo library. It is necessary when installing Intercom due to the image upload functionality. Users will be prompted for the photo library permission only when they tap the image upload button.
+
+## Breaking Changes
+
+Please consult [BREAKING_CHANGES.md](BREAKING_CHANGES.md) for more information about migration.
