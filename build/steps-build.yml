@@ -1,6 +1,6 @@
 steps:
 
-- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_12_2
+- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_12_10
   displayName: 'Select the Xamarin SDK version'
 
 - task: UseDotNet@2
