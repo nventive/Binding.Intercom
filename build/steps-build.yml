@@ -3,6 +3,13 @@ steps:
 - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_12_2
   displayName: 'Select the Xamarin SDK version'
 
+- task: UseDotNet@2
+  displayName: 'Install .Net Core runtime 2.1.x'
+  inputs:
+    version: 2.1.x
+    packageType: 'runtime'
+    installationPath: '$(Agent.ToolsDirectory)/dotnet'
+
 - task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
