@@ -80,15 +80,15 @@
 		<ProjectReference Include="..\Binding.Intercom.Retrofit\Binding.Intercom.Retrofit.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit.Converter.Gson\Binding.Intercom.Retrofit.Converter.Gson.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Otto\Binding.Intercom.Otto.csproj" PrivateAssets="All" />
-		<ProjectReference Include="..\Binding.Intercom.Kotlin.ParcelizeRuntime\Binding.Intercom.Kotlin.ParcelizeRuntime.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json\Binding.Intercom.Kotlinx.Serialization.Json.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json.Jvm\Binding.Intercom.Kotlinx.Serialization.Json.Jvm.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Retrofit2.Serialization.Converter\Binding.Intercom.Retrofit2.Serialization.Converter.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Gif\Binding.Intercom.Io.Coil.Gif.csproj" />
-		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Video\Binding.Intercom.Io.Coil.Video.csproj" />
+		<ProjectReference Include="..\Binding.Intercom.Kotlin.ParcelizeRuntime\Binding.Intercom.Kotlin.ParcelizeRuntime.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json\Binding.Intercom.Kotlinx.Serialization.Json.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json.Jvm\Binding.Intercom.Kotlinx.Serialization.Json.Jvm.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Retrofit2.Serialization.Converter\Binding.Intercom.Retrofit2.Serialization.Converter.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Gif\Binding.Intercom.Io.Coil.Gif.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Video\Binding.Intercom.Io.Coil.Video.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
