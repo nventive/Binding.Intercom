@@ -84,8 +84,10 @@
 		<ProjectReference Include="..\Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json\Binding.Intercom.Kotlinx.Serialization.Json.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json.Jvm\Binding.Intercom.Kotlinx.Serialization.Json.Jvm.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Core.Jvm\Binding.Intercom.Kotlinx.Serialization.Core.Jvm.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit2.Serialization.Converter\Binding.Intercom.Retrofit2.Serialization.Converter.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose.Base\Binding.Intercom.Io.Coil.Compose.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Gif\Binding.Intercom.Io.Coil.Gif.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Video\Binding.Intercom.Io.Coil.Video.csproj" PrivateAssets="All" />
