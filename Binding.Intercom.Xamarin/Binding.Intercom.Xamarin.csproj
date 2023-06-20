@@ -40,35 +40,35 @@
 		<PackageReference Include="Xamarin.Android.Glide" Version="4.11.0" />
 		<PackageReference Include="Xamarin.Android.SquareUp.Otto" Version="1.3.8.2" />
 		<PackageReference Include="Xamarin.AndroidX.Activity" Version="1.7.2" />
-		<PackageReference Include="Xamarin.AndroidX.Activity.Compose" Version="1.5.0" />
-		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.6.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.Activity.Compose" Version="1.7.1.1" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.6.0.3" />
 		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.3.1.5" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Common.Java8" Version="2.6.1.2" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation" Version="1.2.0" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Material" Version="1.1.1" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Material.Icons.Core" Version="1.1.1.2" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI" Version="1.2.0" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling" Version="1.1.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation" Version="1.4.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Material" Version="1.4.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Material.Icons.Core" Version="1.4.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI" Version="1.4.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling" Version="1.4.3.1" />
 		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.2.2" />
 		<PackageReference Include="Xamarin.AndroidX.Core" Version="1.10.1.1" />
 		<PackageReference Include="Xamarin.AndroidX.Core.Core.Ktx" Version="1.10.1.1" />
-		<PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.3.6.5" />
-		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.3.6.5" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.0" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.6.0" />
 		<PackageReference Include="Xamarin.Android.Google.Code.Gson" Version="2.8.6.2" />
 		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.6" />
 		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.12" />
-		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime.Ktx" Version="2.5.0" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime.Ktx" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel" Version="2.6.1.2" />
-		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Compose" Version="2.5.0" />
-		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Ktx" Version="2.5.0" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Compose" Version="2.6.1.2" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Ktx" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.2.1.9" />
 		<PackageReference Include="Xamarin.AndroidX.VectorDrawable" Version="1.1.0.18" />
 		<PackageReference Include="Xamarin.AndroidX.VectorDrawable.Animated" Version="1.1.0.18" />
 		<PackageReference Include="Xamarin.Io.CoilKt.CoilBase" Version="1.4.0" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.8.21.1" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib.Common" Version="1.8.21.1" />
-		<PackageReference Include="Xamarin.KotlinX.Coroutines.Core" Version="1.6.4.3" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.8.22" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib.Common" Version="1.8.22" />
+		<PackageReference Include="Xamarin.KotlinX.Coroutines.Core" Version="1.7.1.1" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.7.1.1" />
 		<PackageReference Include="Xamarin.Google.Accompanist.DrawablePainter" Version="0.20.3" />
 		<PackageReference Include="Xamarin.Google.Accompanist.Placeholder" Version="0.20.3" />
@@ -84,9 +84,7 @@
 		<ProjectReference Include="..\Binding.Intercom.Android.Commons\Binding.Intercom.Android.Commons.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Twig\Binding.Intercom.Twig.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Nexus\Binding.Intercom.Nexus.csproj" PrivateAssets="All" />
-		<ProjectReference Include="..\Binding.Intercom.Retrofit\Binding.Intercom.Retrofit.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit.Converter.Gson\Binding.Intercom.Retrofit.Converter.Gson.csproj" PrivateAssets="All" />
-		<ProjectReference Include="..\Binding.Intercom.Otto\Binding.Intercom.Otto.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Kotlin.ParcelizeRuntime\Binding.Intercom.Kotlin.ParcelizeRuntime.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json\Binding.Intercom.Kotlinx.Serialization.Json.csproj" PrivateAssets="All" />
