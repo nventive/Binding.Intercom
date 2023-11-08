@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Compose.Base", "Binding.Intercom.Io.Coil.Compose.Base\Binding.Intercom.Io.Coil.Compose.Base.csproj", "{1B948962-5824-4DB4-974C-9B51150FB792}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.CoilKt.Base", "Binding.Intercom.Io.CoilKt.Base\Binding.Intercom.Io.CoilKt.Base.csproj", "{34444EB5-1717-4573-BA68-83ABC38DC0BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -232,6 +234,14 @@ Global
 		{1B948962-5824-4DB4-974C-9B51150FB792}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
 		{1B948962-5824-4DB4-974C-9B51150FB792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B948962-5824-4DB4-974C-9B51150FB792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
