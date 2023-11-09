@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Retrofit.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Kotlin.ParcelizeRuntime", "Binding.Intercom.Kotlin.ParcelizeRuntime\Binding.Intercom.Kotlin.ParcelizeRuntime.csproj", "{B8083E14-7209-4C8B-B8C2-19EAEC3B721D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Facebook.Flipper", "Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj", "{81D59D7F-9D98-41F0-8E17-0F2FB9B1D12B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Facebook.Flipper", "Binding.Intercom.Facebook.Flipper\Binding.Intercom.Facebook.Flipper.csproj", "{81D59D7F-9D98-41F0-8E17-0F2FB9B1D12B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Kotlinx.Serialization.Json", "Binding.Intercom.Kotlinx.Serialization.Json\Binding.Intercom.Kotlinx.Serialization.Json.csproj", "{5FD7E4D8-5AAD-4F01-8670-1B2D6E81B830}"
 EndProject
@@ -46,17 +46,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Kotlinx.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Retrofit2.Serialization.Converter", "Binding.Intercom.Retrofit2.Serialization.Converter\Binding.Intercom.Retrofit2.Serialization.Converter.csproj", "{AD289441-9AF2-433D-911B-71CDD77C3951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.AndroidX.DataBinding.ViewBinding", "Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj", "{573FC1BD-29E4-4FBE-ABA8-3BB27FFF3AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.AndroidX.DataBinding.ViewBinding", "Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj", "{573FC1BD-29E4-4FBE-ABA8-3BB27FFF3AF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Gif", "Binding.Intercom.Io.Coil.Gif\Binding.Intercom.Io.Coil.Gif.csproj", "{ECAAD5B4-3C2F-4ECD-844E-4DAA7F33A8F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Video", "Binding.Intercom.Io.Coil.Video\Binding.Intercom.Io.Coil.Video.csproj", "{8E581645-BA3F-4C0A-A4D2-41A065402946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Compose", "Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj", "{69F03928-9DF1-451F-B138-8ADC425D6FF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Io.Coil.Compose", "Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj", "{69F03928-9DF1-451F-B138-8ADC425D6FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.Coil.Compose.Base", "Binding.Intercom.Io.Coil.Compose.Base\Binding.Intercom.Io.Coil.Compose.Base.csproj", "{1B948962-5824-4DB4-974C-9B51150FB792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Io.Coil.Compose.Base", "Binding.Intercom.Io.Coil.Compose.Base\Binding.Intercom.Io.Coil.Compose.Base.csproj", "{1B948962-5824-4DB4-974C-9B51150FB792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.Io.CoilKt.Base", "Binding.Intercom.Io.CoilKt.Base\Binding.Intercom.Io.CoilKt.Base.csproj", "{34444EB5-1717-4573-BA68-83ABC38DC0BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binding.Intercom.Io.CoilKt.Base", "Binding.Intercom.Io.CoilKt.Base\Binding.Intercom.Io.CoilKt.Base.csproj", "{34444EB5-1717-4573-BA68-83ABC38DC0BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding.Intercom.SquareUp.Otto", "Binding.Intercom.SquareUp.Otto\Binding.Intercom.SquareUp.Otto.csproj", "{1B474E6D-223C-4568-B46F-5DD734A89C20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -242,6 +244,14 @@ Global
 		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
 		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34444EB5-1717-4573-BA68-83ABC38DC0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release_Android|Any CPU.ActiveCfg = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release_Android|Any CPU.Build.0 = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release_iOS|Any CPU.ActiveCfg = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release_iOS|Any CPU.Build.0 = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B474E6D-223C-4568-B46F-5DD734A89C20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
