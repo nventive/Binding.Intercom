@@ -8,10 +8,22 @@ steps:
     custom: 'workload'
     arguments: 'install android ios'
 
-- task: NuGetCommand@2
+- task: MSBuild@1
+  displayName: 'Restore solution packages'
   inputs:
-    solution: $(Build.SourcesDirectory)/$(SolutionFileName)
-    feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
+    solution: $(SolutionFileName)
+    msbuildLocationMethod: version
+    msbuildVersion: latest
+    msbuildArchitecture: x86
+    msbuildArguments: >
+      /t:restore
+    configuration: $(ApplicationConfiguration)
+    platform: $(ApplicationPlatform)
+    clean: false
+    maximumCpuCount: true
+    restoreNugetPackages: false
+    logProjectEvents: false
+    createLogFile: false
 
 - task: MSBuild@1
   inputs:
