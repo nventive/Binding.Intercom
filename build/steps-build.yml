@@ -1,6 +1,13 @@
 steps:
 - task: NuGetToolInstaller@0
 
+- task: DotNetCoreCLI@2
+  displayName: 'Install dotnet 6 workloads'
+  inputs:
+    command: 'custom'
+    custom: 'workload'
+    arguments: 'install android ios'
+
 - task: NuGetCommand@2
   inputs:
     solution: $(Build.SourcesDirectory)/$(SolutionFileName)
