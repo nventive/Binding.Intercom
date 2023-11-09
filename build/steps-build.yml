@@ -17,8 +17,8 @@ steps:
     msbuildArchitecture: x86
     msbuildArguments: >
       /t:restore
-    configuration: $(ApplicationConfiguration)
-    platform: $(ApplicationPlatform)
+    platform: 'Any CPU'
+    configuration: Release
     clean: false
     maximumCpuCount: true
     restoreNugetPackages: false
