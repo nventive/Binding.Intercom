@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net60-android31.0</TargetFramework>
+    <TargetFramework>net6.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
