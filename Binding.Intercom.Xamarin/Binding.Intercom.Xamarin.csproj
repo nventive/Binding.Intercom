@@ -18,7 +18,7 @@
 	
 	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
-		<TargetFrameworkVersion>31</TargetFrameworkVersion>
+		<TargetPlatformVersion>31</TargetPlatformVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
