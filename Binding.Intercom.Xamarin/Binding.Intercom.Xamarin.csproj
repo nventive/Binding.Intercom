@@ -1,13 +1,8 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>monoandroid12.0;xamarinios10</TargetFrameworks>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-		<OutputType>module</OutputType>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)' == 'monoandroid12.0'">
-		<TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
+		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -20,7 +15,10 @@
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
-
+	
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="nugetIcon.png" Pack="true" Visible="false" PackagePath="" />
@@ -33,16 +31,15 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'monoandroid12.0'">
-		<PackageReference Include="Square.Retrofit2" Version="2.9.0.2" />
-		<PackageReference Include="Square.OkHttp3" Version="4.11.0.1" />
-		<PackageReference Include="Xamarin.Android.Google.Android.Flexbox" Version="3.0.0.1" />
-		<PackageReference Include="Xamarin.Android.Glide" Version="4.11.0" />
-		<PackageReference Include="Xamarin.Android.SquareUp.Otto" Version="1.3.8.2" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+		<PackageReference Include="Square.Retrofit2" Version="2.9.0.4" />
+		<PackageReference Include="Square.OkHttp3" Version="4.11.0.3" />
+		<PackageReference Include="XAB.FlexboxLayout" Version="3.0.0.2" />
+		<PackageReference Include="Xamarin.Android.Glide" Version="4.12.0.8" />
 		<PackageReference Include="Xamarin.AndroidX.Activity" Version="1.7.2" />
 		<PackageReference Include="Xamarin.AndroidX.Activity.Compose" Version="1.7.1.1" />
-		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.6.0.3" />
-		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.3.1.5" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.7.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.4.1.1" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Common.Java8" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation" Version="1.4.3.1" />
@@ -55,8 +52,8 @@
 		<PackageReference Include="Xamarin.AndroidX.Core.Core.Ktx" Version="1.10.1.1" />
 		<PackageReference Include="Xamarin.AndroidX.Fragment" Version="1.6.0" />
 		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.6.0" />
-		<PackageReference Include="Xamarin.Android.Google.Code.Gson" Version="2.8.6.2" />
-		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.6" />
+		<PackageReference Include="GoogleGson" Version="2.8.8.2" />
+		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.UI" Version="1.0.0.9" />
 		<PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.12" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime.Ktx" Version="2.6.1.2" />
 		<PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel" Version="2.6.1.2" />
@@ -65,19 +62,18 @@
 		<PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.2.1.9" />
 		<PackageReference Include="Xamarin.AndroidX.VectorDrawable" Version="1.1.0.18" />
 		<PackageReference Include="Xamarin.AndroidX.VectorDrawable.Animated" Version="1.1.0.18" />
-		<PackageReference Include="Xamarin.Io.CoilKt.CoilBase" Version="1.4.0" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.8.22" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib.Common" Version="1.8.22" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.9.20" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib.Common" Version="1.9.10.2" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Core" Version="1.7.1.1" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.7.1.1" />
 		<PackageReference Include="Xamarin.Google.Accompanist.DrawablePainter" Version="0.20.3" />
 		<PackageReference Include="Xamarin.Google.Accompanist.Placeholder" Version="0.20.3" />
 		<PackageReference Include="Xamarin.Google.Accompanist.SystemUIController" Version="0.20.3" />
 		<PackageReference Include="Xamarin.Google.Android.Material" Version="1.4.0.6" />
-		<PackageReference Include="XamarinLibrary.Xamarin.Android.Facebook.Shimmer" Version="0.5.0" />
+		<PackageReference Include="XAB.Facebook.Shimmer" Version="0.5.0.4" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='MonoAndroid'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj" PrivateAssets="All" />
@@ -91,14 +87,16 @@
 		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json.Jvm\Binding.Intercom.Kotlinx.Serialization.Json.Jvm.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Core.Jvm\Binding.Intercom.Kotlinx.Serialization.Core.Jvm.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Retrofit2.Serialization.Converter\Binding.Intercom.Retrofit2.Serialization.Converter.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.SquareUp.Otto\Binding.Intercom.SquareUp.Otto.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.AndroidX.DataBinding.ViewBinding\Binding.Intercom.AndroidX.DataBinding.ViewBinding.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose.Base\Binding.Intercom.Io.Coil.Compose.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Compose\Binding.Intercom.Io.Coil.Compose.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Gif\Binding.Intercom.Io.Coil.Gif.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Io.Coil.Video\Binding.Intercom.Io.Coil.Video.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\Binding.Intercom.Io.CoilKt.Base\Binding.Intercom.Io.CoilKt.Base.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFrameworkIdentifier)'=='Xamarin.iOS'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
 		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
