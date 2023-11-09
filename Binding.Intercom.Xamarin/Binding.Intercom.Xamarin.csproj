@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+		<TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
@@ -16,7 +16,7 @@
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
 		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
@@ -31,7 +31,7 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
 		<PackageReference Include="Square.Retrofit2" Version="2.9.0.4" />
 		<PackageReference Include="Square.OkHttp3" Version="4.11.0.3" />
 		<PackageReference Include="XAB.FlexboxLayout" Version="3.0.0.2" />
@@ -73,7 +73,7 @@
 		<PackageReference Include="XAB.Facebook.Shimmer" Version="0.5.0.4" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
 		<ProjectReference Include="..\Binding.Intercom.Android.Base\Binding.Intercom.Android.Base.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer\Binding.Intercom.Android.Composer.csproj" PrivateAssets="All" />
 		<ProjectReference Include="..\Binding.Intercom.Android.Composer.Gallery\Binding.Intercom.Android.Composer.Gallery.csproj" PrivateAssets="All" />
@@ -96,7 +96,7 @@
 		<ProjectReference Include="..\Binding.Intercom.Io.CoilKt.Base\Binding.Intercom.Io.CoilKt.Base.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios'">
 		<ProjectReference Include="../Binding.Intercom.iOS/Binding.Intercom.iOS.csproj" PrivateAssets="All" />
 	</ItemGroup>
 
