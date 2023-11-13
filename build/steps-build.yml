@@ -1,7 +1,7 @@
 parameters:
 - name: pathToSrc
   type: string
-  default: ''
+  default: '$(Build.SourcesDirectory)'
 
 steps:
 - task: NuGetToolInstaller@0
