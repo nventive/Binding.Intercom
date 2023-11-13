@@ -1,12 +1,11 @@
 steps:
 - task: NuGetToolInstaller@0
 
-- task: DotNetCoreCLI@2
-  displayName: 'Install dotnet 6 workloads'
+- task: UseDotNet@2
+  displayName: 'Install .NET SDK'
   inputs:
-    command: 'custom'
-    custom: 'workload'
-    arguments: 'install android ios'
+    packageType: 'sdk'
+    version: '7.0.403'
 
 - task: MSBuild@1
   displayName: 'Restore solution packages'
