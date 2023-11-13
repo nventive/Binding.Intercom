@@ -1,3 +1,8 @@
+parameters:
+- name: pathToSrc
+  type: string
+  default: ''
+
 steps:
 - task: NuGetToolInstaller@0
 
@@ -7,37 +12,29 @@ steps:
     packageType: 'sdk'
     version: '7.0.403'
 
-- task: MSBuild@1
-  displayName: 'Restore solution packages'
-  inputs:
-    solution: $(SolutionFileName)
-    msbuildLocationMethod: version
-    msbuildVersion: latest
-    msbuildArchitecture: x86
-    msbuildArguments: >
-      /t:restore /p:TargetFrameworkVersion=net7.0-android
-    platform: 'Any CPU'
-    configuration: Release
-    clean: false
-    maximumCpuCount: true
-    restoreNugetPackages: false
-    logProjectEvents: false
-    createLogFile: false
+- script: >
+    dotnet $(dotNetCommand) ${{ parameters.pathToSrc }}/Binding.Intercom.Twig
+    -f:$(BuildTargetFramework)
+    -c:Release
+    /p:InformationalVersion=$(GitVersion.InformationalVersion)
+    /bl:$(build.artifactstagingdirectory)/build-$(BuildTargetFramework).binlog
+  displayName: Build Project for Release
 
-- task: MSBuild@1
+- task: CopyFiles@2
+  displayName: 'Copy Binary Files'
+  retryCountOnTaskFailure: 3
   inputs:
-    solution: $(SolutionFileName)
-    msbuildLocationMethod: version
-    msbuildVersion: latest
-    msbuildArchitecture: x86
-    msbuildArguments: /p:PackageOutputPath=$(PackageOutputPath) /p:TargetFrameworkVersion=net7.0-android
-    clean: false
-    maximumCpuCount: true
-    restoreNugetPackages: false
-    logProjectEvents: false
-    createLogFile: false
-    platform: 'Any CPU'
-    configuration: Release
+    SourceFolder: '${{ parameters.pathToSrc }}/Binding.Intercom.Twig/bin/Release/net7.0-android'
+    Contents: |
+      **/*.*
+    TargetFolder: $(build.ArtifactStagingDirectory)
+    CleanTargetFolder: false
+    OverWrite: true
+    flattenFolders: true
 
 - publish: $(Build.ArtifactStagingDirectory)
   artifact: $(ArtifactName)
+
+- task: PostBuildCleanup@3
+  displayName: 'Post-Build Cleanup: Cleanup files to keep build server clean!'
+  condition: always()
