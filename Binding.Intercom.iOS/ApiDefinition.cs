@@ -229,7 +229,7 @@ namespace Binding.Intercom.iOS
 		// +(void)setBottomPadding:(CGFloat)bottomPadding;
 		[Static]
 		[Export("setBottomPadding:")]
-		void SetBottomPadding(nfloat bottomPadding);
+		void SetBottomPadding(System.Runtime.InteropServices.NFloat bottomPadding);
 
 		// +(void)setInAppMessagesVisible:(BOOL)visible;
 		[Static]
