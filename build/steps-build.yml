@@ -15,7 +15,7 @@ steps:
     msbuildVersion: latest
     msbuildArchitecture: x86
     msbuildArguments: >
-      /t:restore
+      /t:restore /p:TargetFrameworkVersion=net7.0-android
     platform: 'Any CPU'
     configuration: Release
     clean: false
@@ -30,7 +30,7 @@ steps:
     msbuildLocationMethod: version
     msbuildVersion: latest
     msbuildArchitecture: x86
-    msbuildArguments: /p:PackageOutputPath=$(PackageOutputPath)
+    msbuildArguments: /p:PackageOutputPath=$(PackageOutputPath) /p:TargetFrameworkVersion=net7.0-android
     clean: false
     maximumCpuCount: true
     restoreNugetPackages: false
