@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<PropertyGroup>
+		<PackageId>nventive.binding.io.coilkt.base</PackageId>
+		<Title>Io.CoilKt.Base Binding</Title>
+		<Description>A .NET binding over the Io.CoilKt.Base SDK</Description>
+		<Authors>nventive</Authors>
+		<Owners>nventive</Owners>
+		<PackageIcon>nugetIcon.png</PackageIcon>
+		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Kotlin.Parcelize.Runtime.Maui" Version="1.7.20" />
+		<PackageReference Include="Square.OkIO" Version="3.5.0.1" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.7.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.4.1.1" />
+		<PackageReference Include="Xamarin.AndroidX.Collection" Version="1.2.0.10" />
+		<PackageReference Include="Xamarin.AndroidX.Core" Version="1.7.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.ExifInterface" Version="1.3.3.6" />
+		<PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime" Version="2.4.1.2" />
+		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.6.1" />
+		<PackageReference Include="Square.OkHttp3" Version="4.11.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="nugetIcon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+</Project>

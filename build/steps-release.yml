@@ -15,7 +15,7 @@ jobs:
             inputs:
               command: push
               nuGetFeedType: external
-              packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
+              packagesToPush: '$(build.ArtifactStagingDirectory)/**/*.nupkg'
               publishFeedCredentials: 'NuGet.org - nventive'
               verbosityPush: Normal
 

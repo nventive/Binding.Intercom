@@ -7,21 +7,18 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<PropertyGroup>
-		<PackageId>nventive.binding.kotlinx.serialization.json</PackageId>
-		<Title>Kotlinx.Serialization.Json Binding</Title>
-		<Description>A .NET binding over the Kotlinx.Serialization.Json SDK</Description>
+		<PackageId>nventive.binding.otto</PackageId>
+		<Title>Twig SDK Binding</Title>
+		<Description>A .NET binding over the Otto SDK</Description>
 		<Authors>nventive</Authors>
 		<Owners>nventive</Owners>
 		<PackageIcon>nugetIcon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-		<Version>1.2.2</Version>
+		<Version>1.3.8</Version>
 	</PropertyGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Binding.Intercom.Kotlinx.Serialization.Json.Jvm\Binding.Intercom.Kotlinx.Serialization.Json.Jvm.csproj">
-			<Project>{50666671-278e-42b1-9645-1c17911a6946}</Project>
-			<Name>Binding.Intercom.Kotlinx.Serialization.Json.Jvm</Name>
-		</ProjectReference>
+	  <None Remove="otto-1.3.8.jar" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,29 +1,39 @@
+parameters:
+- name: pathToSrc
+  type: string
+  default: '$(Build.SourcesDirectory)'
+
 steps:
-
-- script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_12_14
-  displayName: 'Select the Xamarin SDK version'
-
-- task: NuGetToolInstaller@0
-
-- task: NuGetCommand@2
+- task: UseDotNet@2
+  displayName: 'Install .NET SDK'
   inputs:
-    solution: $(Build.SourcesDirectory)/$(SolutionFileName)
-    feedRestore: "36e50407-5798-43e2-b0e2-a0de0e3f46c6"
+    packageType: 'sdk'
+    version: '7.0.403'
 
-- task: MSBuild@1
+- powershell: dotnet workload install maui --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+  displayName: Install .NET MAUI Workload
+
+- task: NuGetAuthenticate@1
   inputs:
-    solution: $(SolutionFileName)
-    msbuildLocationMethod: version
-    msbuildVersion: latest
-    msbuildArchitecture: x86
-    msbuildArguments: /p:PackageOutputPath=$(PackageOutputPath)
-    clean: false
-    maximumCpuCount: true
-    restoreNugetPackages: false
-    logProjectEvents: false
-    createLogFile: false
-    platform: 'Any CPU'
-    configuration: Release
+    forceReinstallCredentialProvider: true
+
+- script: >
+    dotnet pack ${{ parameters.pathToSrc }}/Binding.Intercom.Xamarin
+    -c:Release
+    /bl:$(build.artifactstagingdirectory)/build-$(BuildTargetFramework).binlog
+  displayName: Build Project for Release
+
+- task: CopyFiles@2
+  displayName: 'Copy Nuget packages'
+  retryCountOnTaskFailure: 3
+  inputs:
+    SourceFolder: '${{ parameters.pathToSrc }}'
+    Contents: |
+      **/*.nupkg
+    TargetFolder: $(build.ArtifactStagingDirectory)
+    CleanTargetFolder: false
+    OverWrite: true
+    flattenFolders: true
 
 - publish: $(Build.ArtifactStagingDirectory)
   artifact: $(ArtifactName)

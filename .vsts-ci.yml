@@ -20,12 +20,12 @@ stages:
   jobs:
   - job : On_Mac
     strategy:
-      maxParallel: 1
+      maxParallel: 2
       matrix:
-        Xamarin.Binding.Intercom:
-          SolutionFileName: Binding.Intercom.sln
+        Binding.Intercom:
           ApplicationPlatform: Any CPU
           ArtifactName: Binding.Intercom
+
     pool:
       vmImage: $(macPoolName)
       
