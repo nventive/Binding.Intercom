@@ -8,14 +8,14 @@ jobs:
       deploy:
         steps:
           - download: current
-            artifact: Binding.Intercom
+            artifact: $(ArtifactName)
 
           - task: NuGetCommand@2
             displayName: 'Publish nuget package'
             inputs:
               command: push
               nuGetFeedType: external
-              packagesToPush: '$(build.ArtifactStagingDirectory)/**/*.nupkg'
+              packagesToPush: '$(Pipeline.Workspace)/**/*.nupkg'
               publishFeedCredentials: 'NuGet.org - nventive'
               verbosityPush: Normal
 

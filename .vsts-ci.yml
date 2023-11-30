@@ -13,6 +13,7 @@ variables:
   PackageOutputPath: $(Build.ArtifactStagingDirectory)
   NUGET_VERSION: 6.5.0
   macPoolName: 'macOS-12'
+  ArtifactName: Binding.Intercom
 
 stages:
 - stage: Build
@@ -24,7 +25,6 @@ stages:
       matrix:
         Binding.Intercom:
           ApplicationPlatform: Any CPU
-          ArtifactName: Binding.Intercom
 
     pool:
       vmImage: $(macPoolName)
