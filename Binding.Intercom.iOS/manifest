@@ -1,0 +1,12 @@
+﻿<BindingAssembly>
+	<NativeReference Name="Intercom.framework">
+		<ForceLoad>True</ForceLoad>
+		<Frameworks>Foundation</Frameworks>
+		<IsCxx></IsCxx>
+		<Kind>Framework</Kind>
+		<LinkerFlags>-ObjC</LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<SmartLink></SmartLink>
+		<WeakFrameworks></WeakFrameworks>
+	</NativeReference>
+</BindingAssembly>

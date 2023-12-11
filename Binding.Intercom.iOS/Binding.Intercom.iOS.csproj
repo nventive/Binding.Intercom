@@ -29,6 +29,16 @@
 			<ForceLoad>True</ForceLoad>
 			<LinkerFlags>-ObjC</LinkerFlags>
 		</NativeReference>
+
+		<Content Include="manifest">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources</PackagePath>
+		</Content>
+
+		<Content Include="Intercom.framework\**">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework</PackagePath>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
