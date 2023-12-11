@@ -16,6 +16,7 @@
 		<PackageIcon>nugetIcon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<Version>9.3.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
