@@ -3,6 +3,7 @@
 		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<!--This property must always remain false, or else the build fails.-->
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 	</PropertyGroup>
 
