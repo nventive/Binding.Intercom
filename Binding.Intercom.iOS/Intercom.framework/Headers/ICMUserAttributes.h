@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Intercom/ICMCompany.h>
+@class ICMCompany;
 
 /**
  The ICMUserAttributes object is used for updating a user in Intercom.
@@ -100,5 +100,10 @@
  A dictionary representation for the user attributes.
  */
 - (nonnull NSDictionary<NSString *, id> *)attributes;
+
+/**
+ A dictionary representation for the user attributes formatted for registration.
+ */
+- (nonnull NSDictionary<NSNumber *, NSString *> *)registrationAttributes;
 
 @end
