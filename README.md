@@ -63,9 +63,7 @@ The source for the SDK can be found [here](https://github.com/intercom/intercom-
 
 By default inside Intercom.framework folder, we use ios-arm64_armv7 to be able to deploy on physical device. If you need to deploy on Simulator, you will need to replace the content with ios-arm64_i386_x86_64-simulator.
 
-The bindings were generated for the version **9.3.1**.
-
-To upgrade to v9.0.0 please [follow the migration guide](https://developers.intercom.com/installing-intercom/docs/migrating-to-v9).
+The bindings were generated for the version **16.6.6**.
 
 ### How to use
 
@@ -75,9 +73,9 @@ Add a reference to the following packages:
 
 ### Update Info.plist
 
-When installing Intercom, you'll need to make sure that you have a `NSPhotoLibraryUsageDescription` entry in your `Info.plist`.
+When installing Intercom, you'll need to make sure that you have a `NSPhotoLibraryUsageDescription` and `NSCameraUsageDescription` entries in your `Info.plist`.
 
-This is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) for all apps that access the photo library. It is necessary when installing Intercom due to the image upload functionality. Users will be prompted for the photo library permission only when they tap the image upload button.
+This is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) for all apps that access the photo library and camera. It is necessary when installing Intercom due to the image upload functionality. Users will be prompted for the photo library and camera permissions only when they tap the image upload button.
 
 ## Breaking Changes
 
