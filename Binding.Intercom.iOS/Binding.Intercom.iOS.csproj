@@ -5,6 +5,8 @@
 		<ImplicitUsings>true</ImplicitUsings>
 		<IsBindingProject>true</IsBindingProject>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<SwiftVersion>5.3</SwiftVersion>
+		<EnableBitcode>false</EnableBitcode>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -16,7 +18,7 @@
 		<PackageIcon>nugetIcon.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/nventive/Binding.Intercom</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-		<Version>16.6.1</Version>
+		<Version>16.6.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -26,20 +28,60 @@
 	<ItemGroup>
 		<NativeReference Include="Intercom.framework">
 			<Kind>Framework</Kind>
-			<Frameworks>Foundation</Frameworks>
-			<ForceLoad>True</ForceLoad>
-			<LinkerFlags>-ObjC</LinkerFlags>
+			<IsCxx>True</IsCxx>
+			<SmartLink>True</SmartLink>
 		</NativeReference>
-
+	
 		<Content Include="manifest">
 			<Pack>true</Pack>
 			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources</PackagePath>
 		</Content>
 
-		<Content Include="Intercom.framework\**">
+		<None Include="Intercom.framework\**">
 			<Pack>true</Pack>
 			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework</PackagePath>
-		</Content>
+		</None>
+
+		<None Include="Intercom.framework\Headers\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\InterBlocksAssets.bundle\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\Intercom.bundle\data\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\Intercom.bundle\sound\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\IntercomAssets.bundle\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\IntercomTranslations.bundle\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework\</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\Modules\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework</PackagePath>
+		</None>
+
+		<None Include="Intercom.framework\Modules\Intercom.swiftmodule\*.*">
+			<Pack>true</Pack>
+			<PackagePath>lib\net7.0-ios16.1\Binding.Intercom.iOS.resources\Intercom.framework</PackagePath>
+		</None>
+
 	</ItemGroup>
 
 	<ItemGroup>
